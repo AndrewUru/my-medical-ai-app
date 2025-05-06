@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💺 My Medical AI App
 
-## Getting Started
+Aplicación web desarrollada con **Next.js**, **Supabase** y **shadcn/ui** para análisis y gestión de informes médicos.
+Permite a los usuarios autenticarse, subir informes y visualizar resultados generados con IA.
 
-First, run the development server:
+---
+
+## 🚀 Tecnologías utilizadas
+
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **shadcn/ui**
+- **Supabase** (Base de datos + Autenticación)
+- **Lucide React** (iconos)
+- **Vercel** (despliegue)
+- **Framer Motion** (opcional para animaciones)
+
+---
+
+## 📦 Estructura de carpetas
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+my-medical-ai-app/
+├── app/                  # Páginas y rutas (Next.js App Router)
+│   ├── dashboard/        # Rutas privadas (subir informes, resultados)
+│   └── login/            # Página de login
+├── components/           # Componentes reutilizables (Navbar, Sidebar, TotalConsultas, etc.)
+├── lib/                  # Helpers y configuración (SupabaseClient, utils)
+├── styles/               # Archivos CSS/Tailwind adicionales
+├── public/               # Recursos públicos (favicon, etc.)
+├── .env                  # Variables de entorno
+├── next.config.js
+├── tailwind.config.js
+├── tsconfig.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔑 Variables de entorno (.env)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠 Instalación y desarrollo local
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Clonar el repositorio
+git clone https://github.com/AndrewUru/my-medical-ai-app.git
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Acceder al directorio
+cd my-medical-ai-app
 
-## Deploy on Vercel
+# Instalar dependencias
+npm install
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Ejecutar servidor de desarrollo
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Abrir en el navegador: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## ✅ Componentes shadcn/ui instalados
+
+```bash
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add badge
+npx shadcn-ui@latest add card
+npx shadcn-ui@latest add collapsible
+```
+
+(Agregar otros según necesidad: `skeleton`, `alert`, etc.)
+
+---
+
+## 🔐 Autenticación
+
+Se utiliza **Supabase Auth**.
+La sesión se mantiene y se verifica en cada ruta privada (`dashboard`, `results`, etc.).
+Si no hay sesión, redirige a `/login`.
+
+---
+
+## 📊 Funcionalidades principales
+
+- Registro e inicio de sesión
+- Subida de informes médicos
+- Visualización de resultados
+- Estadísticas personalizadas
+- Diseño responsivo con sidebar y navbar
+- Gráficos y elementos UI modernos
+
+---
+
+## 👥 Despliegue
+
+Aplicación optimizada para **Vercel**.
+Solo hay que conectar el repositorio y añadir las variables de entorno.
+
+---
+
+## 🧠 Roadmap (próximas mejoras)
+
+- Gráficos avanzados en dashboard
+- Ajustes de perfil de usuario
+- Notificaciones por email
+- IA mejorada para análisis de informes
+
+---
+
+## 👨‍💻 Autor
+
+Proyecto desarrollado por **AndrewUru**.
+
+---
+
+## 💡 Notas
+
+> Esta aplicación está en desarrollo. Algunas funcionalidades pueden cambiar o ampliarse.
