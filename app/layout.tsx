@@ -20,16 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="es" className="w-screen">
       <body
-        className={`${inter.className} antialiased bg-background text-foreground min-h-screen flex flex-col`}
+        className={`${inter.className} antialiased bg-background text-foreground min-h-screen overflow-x-hidden w-full flex flex-col`}
       >
         <SupabaseProvider>
-          <Navbar />
-          <main className="flex-1 container max-w-4xl mx-auto p-6">
-            {children}
-          </main>
-          <Footer />
+          <div className="min-h-screen flex flex-col">
+            <Navbar />
+            <main className="flex-1 mx-auto">{children}</main>
+            <Footer />
+          </div>
         </SupabaseProvider>
       </body>
     </html>
