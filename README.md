@@ -1,126 +1,165 @@
-# 💺 My Medical AI App
+💺 My Medical AI App
 
-Aplicación web desarrollada con **Next.js**, **Supabase** y **shadcn/ui** para análisis y gestión de informes médicos.
-Permite a los usuarios autenticarse, subir informes y visualizar resultados generados con IA.
+Aplicación web full stack desarrollada con Next.js, Supabase y OpenAI API para la gestión y análisis inteligente de informes médicos.
 
----
+Permite a los usuarios autenticarse, cargar documentos clínicos y obtener resultados generados mediante Inteligencia Artificial. Su diseño moderno y modular está optimizado para despliegue en Vercel y uso profesional en entornos médicos digitales.
 
-## 🚀 Tecnologías utilizadas
-
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **shadcn/ui**
-- **Supabase** (Base de datos + Autenticación)
-- **Lucide React** (iconos)
-- **Vercel** (despliegue)
-- **Framer Motion** (opcional para animaciones)
 
 ---
 
-## 📦 Estructura de carpetas
+🚀 Tecnologías utilizadas
 
-```bash
+Next.js 14 – App Router + Server Actions
+
+TypeScript
+
+Tailwind CSS
+
+shadcn/ui – Componentes modernos accesibles
+
+Supabase – Base de datos Postgres + Auth
+
+OpenAI API – Análisis automático de textos médicos
+
+Lucide React – Iconografía
+
+Framer Motion – Animaciones suaves (opcional)
+
+Vercel – Deploy y hosting instantáneo
+
+
+
+---
+
+📁 Estructura del proyecto
+
 my-medical-ai-app/
-├── app/                  # Páginas y rutas (Next.js App Router)
-│   ├── dashboard/        # Rutas privadas (subir informes, resultados)
-│   └── login/            # Página de login
-├── components/           # Componentes reutilizables (Navbar, Sidebar, TotalConsultas, etc.)
-├── lib/                  # Helpers y configuración (SupabaseClient, utils)
-├── styles/               # Archivos CSS/Tailwind adicionales
-├── public/               # Recursos públicos (favicon, etc.)
+├── app/                  # Rutas y páginas (App Router)
+│   ├── dashboard/        # Área privada del usuario (subida y análisis)
+│   └── login/            # Inicio de sesión
+├── components/           # Componentes UI reutilizables
+├── lib/                  # Configuraciones y utilidades (Supabase, OpenAI)
+├── styles/               # Estilos globales y personalizados
+├── public/               # Recursos estáticos (favicon, imágenes)
 ├── .env                  # Variables de entorno
 ├── next.config.js
 ├── tailwind.config.js
 ├── tsconfig.json
 └── README.md
-```
+
 
 ---
 
-## 🔑 Variables de entorno (.env)
+🔑 Variables de entorno
 
-```bash
-NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
-```
+NEXT_PUBLIC_SUPABASE_URL=tu-url-de-supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu-clave-anonima
+OPENAI_API_KEY=tu-clave-de-openai
+
 
 ---
 
-## 🛠 Instalación y desarrollo local
+⚙️ Instalación local
 
-```bash
 # Clonar el repositorio
 git clone https://github.com/AndrewUru/my-medical-ai-app.git
 
-# Acceder al directorio
+# Entrar al proyecto
 cd my-medical-ai-app
 
 # Instalar dependencias
 npm install
 
-# Ejecutar servidor de desarrollo
+# Iniciar entorno de desarrollo
 npm run dev
-```
 
-Abrir en el navegador: [http://localhost:3000](http://localhost:3000)
+Accede a http://localhost:3000
+
 
 ---
 
-## ✅ Componentes shadcn/ui instalados
+🧩 Componentes shadcn/ui incluidos
 
-```bash
 npx shadcn-ui@latest add button
 npx shadcn-ui@latest add badge
 npx shadcn-ui@latest add card
 npx shadcn-ui@latest add collapsible
-```
 
-(Agregar otros según necesidad: `skeleton`, `alert`, etc.)
+(Se pueden agregar más como alert, skeleton, dialog, etc.)
 
----
-
-## 🔐 Autenticación
-
-Se utiliza **Supabase Auth**.
-La sesión se mantiene y se verifica en cada ruta privada (`dashboard`, `results`, etc.).
-Si no hay sesión, redirige a `/login`.
 
 ---
 
-## 📊 Funcionalidades principales
+🔐 Autenticación y seguridad
 
-- Registro e inicio de sesión
-- Subida de informes médicos
-- Visualización de resultados
-- Estadísticas personalizadas
-- Diseño responsivo con sidebar y navbar
-- Gráficos y elementos UI modernos
+Implementada con Supabase Auth
 
----
+Las rutas protegidas verifican sesión activa
 
-## 👥 Despliegue
+Redirección automática a /login en caso de sesión inválida
 
-Aplicación optimizada para **Vercel**.
-Solo hay que conectar el repositorio y añadir las variables de entorno.
+
 
 ---
 
-## 🧠 Roadmap (próximas mejoras)
+📊 Funcionalidades principales
 
-- Gráficos avanzados en dashboard
-- Ajustes de perfil de usuario
-- Notificaciones por email
-- IA mejorada para análisis de informes
+✅ Registro e inicio de sesión seguro
+
+📄 Subida y almacenamiento de informes médicos
+
+🤖 Análisis automático mediante OpenAI
+
+📈 Visualización de resultados y estadísticas
+
+💡 Interfaz moderna con diseño responsivo
+
+🧭 Navegación con sidebar dinámica y navbar fija
+
+
 
 ---
 
-## 👨‍💻 Autor
+☁️ Despliegue
 
-Proyecto desarrollado por **AndrewUru**.
+Desarrollado para funcionar sin fricción en Vercel.
+Solo necesitas:
+
+1. Conectar tu cuenta de GitHub con Vercel
+
+
+2. Añadir las variables .env en el panel de configuración
+
+
+3. Hacer deploy (¡listo en segundos!)
+
+
+
 
 ---
 
-## 💡 Notas
+🧠 Roadmap (próximas mejoras)
 
-> Esta aplicación está en desarrollo. Algunas funcionalidades pueden cambiar o ampliarse.
+[ ] Visualización avanzada de gráficas con filtros por fechas
+
+[ ] Configuración de perfil y preferencias
+
+[ ] Envío de notificaciones por email
+
+[ ] Optimización del análisis IA para mayor precisión clínica
+
+
+
+---
+
+👤 Autor
+
+Desarrollado por AndrewUru
+💬 Contacto abierto para mejoras o colaboración
+
+
+---
+
+⚠️ Notas finales
+
+> Esta aplicación está en fase activa de desarrollo. Algunas funcionalidades podrían cambiar o expandirse próximamente. Se recomienda no usarla en entornos clínicos reales sin validación profesional.
